@@ -45,10 +45,10 @@ void cycle_n2(int n) { // O(n^2)
 
 void cycle_ij(int n) { // 
     for (int i = 0; i < n; i++) {
-        for (int j = i; j < n; j++) { // n + (n - 1) + (n - 2) + (n - 3) + ... + 1 == n*(n + 1)/2 
-            cout << i + j; // n*(n + 1)/2 = 1/2*(n*n + n) = O(n^2)
-        }
-    }
+        for (int j = i; j < n; j++) { // n + (n - 1) + 
+            cout << i + j; // + (n - 2) + (n - 3) + ... + 1 == 
+        } // == n*(n + 1)/2 
+    } // n*(n + 1)/2 = 1/2*(n*n + n) = O(n^2)
 }
 
 void cycle_n123(int n) { // O(n^3 + n^2 + n) => O(n^2) !!!
@@ -70,8 +70,8 @@ void cycle_n123(int n) { // O(n^3 + n^2 + n) => O(n^2) !!!
     }
 }
 
-void cycle_abc123(int a, int b, int c) { // O(a + b^2 + c^3) тк мы не знаем точно a b и c 
-    for (int i = 0; i < a; i++) {
+void cycle_abc123(int a, int b, int c) { // O(a + b^2 + c^3) 
+    for (int i = 0; i < a; i++) { // тк мы не знаем точно a b и c 
         cout << i;  // O(a)
     }
     for (int i = 0; i < b; i++) {
@@ -89,7 +89,7 @@ void cycle_abc123(int a, int b, int c) { // O(a + b^2 + c^3) тк мы не зн
     }
 }
 
-int cycle_log1(int a, int b, int c) { //
+int cycle_log1(int a, int b, int c) { 
     int sum = 0;
     while (a != 0) {
         sum += a % 10;
@@ -98,6 +98,11 @@ int cycle_log1(int a, int b, int c) { //
     return sum;
 }
 
+
+/*
+    В цикле мы делаем n действий, а в самом цикле делаем log кол действий => O(n * log(n)), 
+    здесь мы не используем a, тк на вход подается только n !!!
+*/
 int cycle_log2(int n) { // O(n * log(n))
     int sum = 0;
     for (int i = 0; i < n; i++) {
